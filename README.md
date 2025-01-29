@@ -40,7 +40,6 @@ This document provides the codes and analysis for the collective mobility model,
 <p> [7] Brockmann, D., & Helbing, D. (2013). The hidden geometry of complex, network-driven contagion phenomena. science, 342(6164), 1337-1342. </p>
 <p> [8] Zhong, L., Diagne, M., Wang, W., & Gao, J. (2021). Country distancing increase reveals the effectiveness of travel restrictions in stopping COVID-19 transmission. Communications Physics, 4(1), 121. </p>
 <p> [9] Zhong, L., Dong, L., Wang, Q., Song, C., & Gao, J. (2024). Universal spatial inflation of human mobility. arXiv preprint arXiv:2406.06889. <p>
-<p> [10] Zhong, L., Dong, L., Wang, Q., Song, C., & Gao, J. (2024). Switching exploration modes in human mobility. arXiv preprint arXiv:2406.06889. <p>
 
 
 
