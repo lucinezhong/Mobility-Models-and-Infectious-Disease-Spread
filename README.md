@@ -7,6 +7,11 @@ This repository includes codes and analyses of the collective mobility model, in
 
 <h2>Gravity Model</h2>
 
+Inspired by Newton's law of gravitation, George K. Zipf proposed an equation to model mobility flows. The model assumes that the number of trips originating from location i is proportional to its population, the attractiveness of destination j is proportional to its population at the cost of distance, 
+<p align="center"> <I> T<sub>ij</sub> = K M<sub>i</sub>N<sub>j</sub> f(r<sub>ij</sub>)
+
+<p>where K is constant, the M<sub>i</sub>  and N<sub>j</sub> repsectively resprsents the massesses. f(r<sub>ij</sub>) represetens the descreasing fucton of idstance. The most common used form for masses as M<sub>i</sub>=P<sub>i</sub><sup>&alpha;</sup> and  N<sub>j</sub>=P<sub>j</sub><sup>&alpha;</sup>  </p>
+
 <h2>Radiation Model</h2>
 
 <h2>Visitation Model</h2>
