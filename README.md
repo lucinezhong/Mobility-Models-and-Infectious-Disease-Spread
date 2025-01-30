@@ -19,6 +19,13 @@ The Radiation Model, proposed by Filippo Simini et al, presents a parameter appr
 
 <h2>Visitation Model</h2>
 
+Dr. Schläpfer and Dr. Dong, through extensive data analysis, identified a key relationship governing the frequency and spatial distribution of human visits. Their research reveals that the number of visitors  N<sub>i</sub> (r,f) at a location systematically decreases with travel distance r and travel frequency f. The visitation density is defined as 
+&rho;<sub>i</sub>,
+<p align="center"> <i> &rho;<sub>i</sub> (r,f)= N<sub>i</sub> (r,f)/A(r)= &mu;<sub>i</sub>/(rf)<sup>&eta;</sup> </i> 
+
+The average number of visitoars cand be estimated as 
+<p align="center"> <i> V=&mu;A/r<sup>2</sup>ln(f<sub>max</sub>/f<sub>min</sub>) </i> 
+  
 <h2>**Comparison</h2>
 
 <h1> Individual Mobility Model </h1>
