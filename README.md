@@ -41,11 +41,15 @@ We use the Sørensen similarity index (SSI) to measure the similarities between 
 <p> Exploration – With probability P=&rho;S<sup>-&gamma;</sup>, the individual will explore a new location.</p> 
 <p> Preferential Return – With probability 1-P, the individual will return to a previously visited location i according to the locations' past visitation frequency f<sub>i<sub> .</p> 
 
-Many variations of this model have been proposed, such as d-EPR model and p-EPR model.
+Many variations of this model have been proposed, such as the d-EPR and p-EPR models.
 
 <h2>d-EPR Model</h2>
+Unlike the EPR model, in the exploration phase individuals randomly select a new location, the d-EPR model proposes that individuals visit new locations based on the gravity model, w with probability P<sub>ij</sub>.
 
-<h2>p-EPR Model</h2>
+
+<h2>PEPR Model</h2>
+Unlike the EPR model, in the exploration phase individuals randomly select a new location, the Preferential Exploration and Preferential Return (PEPR) model that when individuals explore new locations, they tend to favor areas that are frequently visited. Specifically, exploration direction is biased toward regions with high visitation with distribution P(&theta; ; R,v).
+
 
 <h2>Switch Model</h2>
 
