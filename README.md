@@ -24,11 +24,13 @@ Dr. Schläpfer and Dr. Dong, through extensive data analysis, identified a key r
 <p align="center"> <i> &rho;<sub>i</sub> (r,f)= N<sub>i</sub> (r,f)/A(r)= &mu;<sub>i</sub>/(rf)<sup>&eta;</sup> </i>  </p>
 
 The average number of trips of those individuals live in location i to destination j cand be estimated as 
-<p align="center"> <i> V<sub>ij</sub> &approx; &mu;<sub>j</sub>A<sub>i</sub>/r<sub>ij</sub><sup>2</sup>ln(f<sub>max</sub>/f<sub>min</sub>) </i>  </p>
+<p align="center"> <i> T<sub>ij</sub> &approx; &mu;<sub>j</sub>A<sub>i</sub>/r<sub>ij</sub><sup>2</sup>ln(f<sub>max</sub>/f<sub>min</sub>) </i>  </p>
 where A<sub>i</sub> is the area of original location, r<sub>ij</sub> is the distance. &mu; is the location-specific attractiveness.
   
 <h2>**Comparison</h2>
-
+We use the Sørensen similarity index (SSI) to measure the similarities between estimated flows and true flows between two locations. The SSI is between 0 and 1, higher value indicates higher similarity/accuracy.
+<p align="center"> <i> SSI=2 &sum; <sub>ij</sub> min (T<sub>ij</sub> <sup>model</sup>, T<sub>ij</sub><sup>data</sup>)/(&sum; T<sub>ij</sub> <sup>model</sup>+ &sum; T<sub>ij</sub><sup>data</sup>)
+  
 <h1> Individual Mobility Model </h1>
 
 <h2>EPR Model</h2>
