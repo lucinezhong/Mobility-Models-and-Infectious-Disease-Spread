@@ -70,6 +70,9 @@ s<sub>k</sub>=s<sub>k</sub><sup>real</sup>, i<sub>k</sub>=i<sub>k</sub><sup>real
 <b>Effective Distance</b>: By defining the effective distance d<sub>mn</sub>=1-logP<sub>mn</sub>, the distance from an arbitrary node n to node m is the lengths of shortest path ( &Gamma;) of effective distance,
 <p align="center"> D<sub>mn</sub>=&sum;<sub>(i,j)&in;&Gamma;</sub>   d<sub>ij</sub>
 
+From the initial outbreak location k, effective distance predicts arrival times,
+<p align="center"> D<sub>mk</sub> &sim; T<sub>m</sub><sup>arrival</sup>
+
 
 
 <h2>  SIR-Metapopulation Model with Multiple OLs </h2>
