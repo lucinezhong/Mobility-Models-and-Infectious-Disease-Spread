@@ -30,6 +30,8 @@ where A<sub>i</sub> is the area of original location, r<sub>ij</sub> is the dist
 <h2>**Comparison</h2>
 We use the Sørensen similarity index (SSI) to measure the similarities between estimated flows and true flows between two locations. The SSI is between 0 and 1, higher value indicates higher similarity/accuracy.
 <p align="center"> <i> SSI=2 &sum; <sub>ij</sub> min (T<sub>ij</sub> <sup>model</sup>, T<sub>ij</sub><sup>data</sup>)/(&sum; T<sub>ij</sub> <sup>model</sup>+ &sum; T<sub>ij</sub><sup>data</sup>)
+
+***the used location area size is not true.
   
 <h1> Individual Mobility Model </h1>
 
