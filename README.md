@@ -63,12 +63,24 @@ The Susceptible-Infectious-Recovered (SIR) metapopulation model is a mathematica
 <p align="center"> <i> ṡ<sub>n</sub>=-&alpha; s<sub>n</sub>i<sub>n</sub> &sigma;(i<sub>n</sub>/&varepsilon;) +&gamma; &sum;<sub>m &ne; n</sub> P<sub>mn</sub> (s<sub>m</sub>-s<sub>n</sub>)
 <p align="center"> <i> i̇<sub>n</sub>=&alpha; s<sub>n</sub>i<sub>n</sub> &sigma;(i<sub>n</sub>/&varepsilon;) -&beta;i<sub>n</sub> +&gamma; &sum;<sub>m &ne; n</sub> P<sub>mn</sub> (i<sub>m</sub>-i<sub>n</sub>)
 
+witch single initial outbreak location k, given as:
+
+s<sub>k</sub>=s<sub>k</sub><sup>real</sup>, i<sub>k</sub>=i<sub>k</sub><sup>real</sup>, r=r<sub>k</sub><sup>real</sup>.
+
+<b>Effective Distance</b>: By defining the effective distance d<sub>mn</sub>=1-logP<sub>mn</sub>, the distance from an arbitrary node n to node m is the lengths of shortest path ( &Gamma;) of effective distance,
+<p align="center"> D<sub>mn</sub>=&sum;<sub>(i,j)&in;&Gamma;</sub>   d<sub>ij</sub>
+
+
+
 <h2>  SIR-Metapopulation Model with Multiple OLs </h2>
 As intervention measures and travel restrictions vary across regions and outbreak locations shift with differing infection levels, we propose the SIR-Metapopulation Model with Multiple Outbreak Locations (OLs) and a dynamic flow matrix P<sub>mn</sub> (t). This model accounts for evolving mobility patterns and region-specific control strategies, enabling a more adaptive representation of disease spread in heterogeneous environments.
 
 <p align="center"> <i> ṡ<sub>n</sub>=-&alpha;(t) s<sub>n</sub>i<sub>n</sub> &sigma;(i<sub>n</sub>/&varepsilon;) +&gamma;(t) &sum;<sub>m &ne; n</sub> P<sub>mn</sub>(t) (s<sub>m</sub>-s<sub>n</sub>)
 <p align="center"> <i> i̇<sub>n</sub>=&alpha;(t) s<sub>n</sub>i<sub>n</sub> &sigma;(i<sub>n</sub>/&varepsilon;) -&beta;(t)i<sub>n</sub> +&gamma;(t) &sum;<sub>m &ne; n</sub> P<sub>mn</sub>(t) (i<sub>m</sub>-i<sub>n</sub>)
 
+witch changing outbreak location set N<sub>I</sub>(t), given as:
+
+s<sub>k</sub>=s<sub>k</sub><sup>real</sup>, i<sub>k</sub>=i<sub>k</sub><sup>real</sup>, r=r<sub>k</sub><sup>real</sup>, &forall; k &in; N<sub>I</sub>(t)
 
 <h1> Optimization Algorithms on Controlling Infectious Disease Spread </h1>
 
