@@ -37,7 +37,7 @@ We use the Sørensen similarity index (SSI) to measure the similarities between 
 
 <h2>EPR Model</h2>
 
-<p> The EPR (Exploration and Preferential Return) model is a classical individual mobility model that describes human mobility dynamics based on two fundamental behavioral tendencies. This model has successfully captured individual mobility scaling, including 1) unique locations S(t)&sim;t<sup>&mu;</sup> ; 2) Zipf's law of visitation frequency; 3) ultraslow diffusion </p>
+<p> The EPR (Exploration and Preferential Return) model (Proposed by Chaoming Song et al) is a classical individual mobility model that describes human mobility dynamics based on two fundamental behavioral tendencies. This model has successfully captured individual mobility scaling, including 1) unique locations S(t)&sim;t<sup>&mu;</sup> ; 2) Zipf's law of visitation frequency; 3) ultraslow diffusion </p>
 <p> Exploration – With probability P=&rho;S<sup>-&gamma;</sup>, the individual will explore a new location.</p> 
 <p> Preferential Return – With probability 1-P, the individual will return to a previously visited location i according to the locations' past visitation frequency f<sub>i<sub> .</p> 
 
