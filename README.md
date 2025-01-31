@@ -58,8 +58,13 @@ Unlike the EPR model, in the exploration phase individuals randomly select a new
 <h1> Meta-population Model for Simulating Infectious Disease Spread </h1>
 
 <h2>  SIR-Metapopulation Model </h2>
+The Susceptible-Infectious-Recovered (SIR) metapopulation model is a mathematical framework used to study the spread of infectious diseases across multiple, interconnected populations. Unlike the classic SIR model, which assumes a single well-mixed population, the metapopulation approach accounts for spatial heterogeneity by dividing the population into distinct subpopulations (or patches) connected by mobility or migration dynamics. In this framework let there be n regions (subpopulations), each governed by the standard SIR dynamics, where individuals exist in three states: susceptible s<sub>n</sub>, infected i<sub>n</sub>,  removed r<sub>n</sub>. Disease transmission within each subpopulation follows local interactions, while the inter-subpopulation spread is driven by travel dynamics, represented by the movement flow matrix P<sub>mn</sub>,  which quantifies the mobility of individuals between regions m and n,
+
+<p align="center"> <i> ṡ<sub>n</sub>=-&alpha; s<sub>n</sub>i<sub>n</sub> &sigma;(i<sub>n</sub>/&varepsilon;) +&gamma; &sum;<sub>m &ne; n</sub> P<sub>mn</sub> (s<sub>m</sub>-s<sub>n</sub>)
+<p align="center"> <i> i̇<sub>n</sub>=&alpha; s<sub>n</sub>i<sub>n</sub> &sigma;(i<sub>n</sub>/&varepsilon;) -&beta;i<sub>n</sub> +&gamma; &sum;<sub>m &ne; n</sub> P<sub>mn</sub> (i<sub>m</sub>-i<sub>n</sub>)
 
 <h2>  SIR-Metapopulation Model with Multiple OLs </h2>
+As intervention measures and travel restrictions vary across regions and outbreak locations shift with differing infection levels, we propose the SIR-Metapopulation Model with Multiple Outbreak Locations (OLs) and a dynamic flow matrix P<sub>mn</sub> (t). This model accounts for evolving mobility patterns and region-specific control strategies, enabling a more adaptive representation of disease spread in heterogeneous environments.
 
 
 <h1> Optimization Algorithms on Controlling Infectious Disease Spread </h1>
