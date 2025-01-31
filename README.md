@@ -56,6 +56,9 @@ Many variations of this model have been proposed, such as d-EPR model and p-EPR 
 <h2>  SIR-Metapopulation Model </h2>
 
 <h2>  SIR-Metapopulation Model with Multiple OLs </h2>
+
+
+<h1> Optimization Algorithms on Controlling Infectious Disease Spread </h1>
 <p>References: </p>
 <p>[1] Barbosa, H., Barthelemy, M., Ghoshal, G., James, C. R., Lenormand, M., Louail, T., ... & Tomasini, M. (2018). Human mobility: Models and applications. Physics Reports, 734, 1-74.</p>
 <p>[2] Belik, V., Geisel, T., & Brockmann, D. (2011). Natural human mobility patterns and spatial spread of infectious diseases. Physical Review X, 1(1), 011001.</p>
