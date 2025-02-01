@@ -13,13 +13,13 @@ Inspired by Newton's law of gravitation, George K. Zipf proposed an equation to 
 <p>where K is constant, the M<sub>i</sub>  and N<sub>j</sub> repsectively resprsents the massesses. f(r<sub>ij</sub>) represetens the descreasing fucton of idstance. The most common used form for masses as M<sub>i</sub>=P<sub>i</sub><sup>&alpha;</sup> and  N<sub>j</sub>=P<sub>j</sub><sup>&alpha;</sup>.  </p>
 
 <h2>Radiation Model</h2>
-The Radiation Model, proposed by Filippo Simini et al, presents a parameter approach to estimating commuting flues between two locations. Unlike traditional gravity-based models, which rely on tunable parameters to fit empirical data, the Radiation Model derives mobility flows from population distribution alone, making it a more universal and scalable method. The model assumes that the number of trips from origin location i to destination j depends on not only the population of two locations but also the presence of alternative opportunities in the surrounding areas. By introducing S<sub>ij</sub>, the population within the radius of  r<sub>ij</sub> centered around location i, the model predicts the flow as
+The Radiation Model（Filippo Simini et al., 2012), presents a parameter approach to estimating commuting flues between two locations. Unlike traditional gravity-based models, which rely on tunable parameters to fit empirical data, the Radiation Model derives mobility flows from population distribution alone, making it a more universal and scalable method. The model assumes that the number of trips from origin location i to destination j depends on not only the population of two locations but also the presence of alternative opportunities in the surrounding areas. By introducing S<sub>ij</sub>, the population within the radius of  r<sub>ij</sub> centered around location i, the model predicts the flow as
 <p align="center"> <i>E(T<sub>ij</sub>) = T<sub>i</sub>M<sub>i</sub>N<sub>j</sub> / (M<sub>i</sub> + S<sub>ij</sub>)(M<sub>i</sub> + N<sub>j</sub> + S<sub>ij</sub>)</i> </p>
 
 
 <h2>Visitation Model</h2>
 
-Dr. Schläpfer and Dr. Dong, through extensive data analysis, identified a key relationship governing the frequency and spatial distribution of human visits. Their research reveals that the number of visitors  N<sub>i</sub> (r,f) at a location systematically decreases with travel distance r and travel frequency f. The visitation density is defined as 
+Dr. Markus and Dr. Dong (Schläpfer Markus et al., 2021), through extensive data analysis, identified a key relationship governing the frequency and spatial distribution of human visits. Their research reveals that the number of visitors  N<sub>i</sub> (r,f) at a location systematically decreases with travel distance r and travel frequency f. The visitation density is defined as 
 &rho;<sub>i</sub>,
 <p align="center"> <i> &rho;<sub>i</sub> (r,f)= N<sub>i</sub> (r,f)/A(r)= &mu;<sub>i</sub>/(rf)<sup>&eta;</sup> </i>  </p>
 
@@ -37,18 +37,18 @@ We use the Sørensen similarity index (SSI) to measure the similarities between 
 
 <h2>EPR Model</h2>
 
-<p> The EPR (Exploration and Preferential Return) model (Proposed by Chaoming Song et al) is a classical individual mobility model that describes human mobility dynamics based on two fundamental behavioral tendencies. This model has successfully captured individual mobility scaling, including 1) unique locations S(t)&sim;t<sup>&mu;</sup> ; 2) Zipf's law of visitation frequency; 3) ultraslow diffusion </p>
+<p> The EPR (Exploration and Preferential Return) model (Song Chaoming et al., 2010) is a classical individual mobility model that describes human mobility dynamics based on two fundamental behavioral tendencies. This model has successfully captured individual mobility scaling, including 1) unique locations S(t)&sim;t<sup>&mu;</sup> ; 2) Zipf's law of visitation frequency; 3) ultraslow diffusion </p>
 <p> Exploration – With probability P=&rho;S<sup>-&gamma;</sup>, the individual will explore a new location.</p> 
 <p> Preferential Return – With probability 1-P, the individual will return to a previously visited location i according to the locations' past visitation frequency f<sub>i<sub> .</p> 
 
 Many variations of this model have been proposed, such as the d-EPR and p-EPR models.
 
 <h2>d-EPR Model</h2>
-Unlike the EPR model, in the exploration phase individuals randomly select a new location, the d-EPR model proposes that individuals visit new locations based on the gravity model, w with probability P<sub>ij</sub>.
+Unlike the EPR model, in the exploration phase individuals randomly select a new location, the d-EPR model (Luca Pappalardo et al. 2015) proposes that individuals visit new locations based on the gravity model, w with probability P<sub>ij</sub>.
 
 
 <h2>PEPR Model</h2>
-Unlike the EPR model, in the exploration phase individuals randomly select a new location, the Preferential Exploration and Preferential Return (PEPR) model that when individuals explore new locations, they tend to favor areas that are frequently visited. Specifically, exploration direction is biased toward regions with high visitation with distribution P(&theta; ; R,v).
+Unlike the EPR model, in the exploration phase individuals randomly select a new location, the Preferential Exploration and Preferential Return (PEPR) model (Schläpfer Markus et al., 2021) that when individuals explore new locations, they tend to favor areas that are frequently visited. Specifically, exploration direction is biased toward regions with high visitation with distribution P(&theta; ; R,v).
 
 
 <h2>Switch Model</h2>
@@ -67,7 +67,7 @@ witch single initial outbreak location k, given as:
 
 s<sub>k</sub>=s<sub>k</sub><sup>real</sup>, i<sub>k</sub>=i<sub>k</sub><sup>real</sup>, r=r<sub>k</sub><sup>real</sup>.
 
-<b>Effective Distance</b>: By defining the effective distance d<sub>mn</sub>=1-logP<sub>mn</sub>, the distance from an arbitrary node n to node m is the lengths of shortest path ( &Gamma;) of effective distance,
+<b>Effective Distance</b> (Brockmann D., Helbing D. 2013): By defining the effective distance d<sub>mn</sub>=1-logP<sub>mn</sub>, the distance from an arbitrary node n to node m is the lengths of shortest path ( &Gamma;) of effective distance,
 <p align="center"> D<sub>mn</sub>=&sum;<sub>(i,j)&in;&Gamma;</sub>   d<sub>ij</sub>
 
 From the initial outbreak location k, effective distance predicts arrival times,
@@ -85,7 +85,7 @@ witch changing outbreak location set N<sub>I</sub>(t), given as:
 
 s<sub>k</sub>=s<sub>k</sub><sup>real</sup>, i<sub>k</sub>=i<sub>k</sub><sup>real</sup>, r=r<sub>k</sub><sup>real</sup>, &forall; k &in; N<sub>I</sub>(t)
 
-<b>Multiple-OLs Effective Distance</b>: By defining the effective distance d<sub>mn</sub>=1-logP<sub>mn</sub>, the distance from mutilpe outbreak locations N<sub>I</sub> to node m is computed as,
+<b>Multiple-OLs Effective Distance</b> (Lu Zhong et al. 2021): By defining the effective distance d<sub>mn</sub>=1-logP<sub>mn</sub>, the distance from mutilpe outbreak locations N<sub>I</sub> to node m is computed as,
 <p align="center"> D<sub>m|N<sub>I</sub> </sub>=log M/ &sum;<sub>n<sub>i</sub> &in;  N<sub>I</sub> </sub> 1/e<sup>d<sub>m|n<sub>i</sub> </sup> 
 
 From the outbreak location set N<sub>I</sub>, effective distance predicts arrival times,
