@@ -91,6 +91,7 @@ s<sub>k</sub>=s<sub>k</sub><sup>real</sup>, i<sub>k</sub>=i<sub>k</sub><sup>real
 From the outbreak location set N<sub>I</sub>, effective distance predicts arrival times,
 <p align="center"> D<sub>m|N<sub>I</sub>  &sim; T<sub>m</sub><sup>arrival</sup>
 
+<h2>  POI-Metapopulation Model </h2>
 
 <h1> Optimization Algorithms on Controlling Infectious Disease Spread </h1>
 
