@@ -51,8 +51,6 @@ Unlike the EPR model, in the exploration phase individuals randomly select a new
 Unlike the EPR model, in the exploration phase individuals randomly select a new location, the Preferential Exploration and Preferential Return (PEPR) model (Schläpfer Markus et al., 2021) that when individuals explore new locations, they tend to favor areas that are frequently visited. Specifically, exploration direction is biased toward regions with high visitation with distribution P(&theta; ; R,v).
 
 
-<h2>Switch Model</h2>
-
 <h2>**Comparison</h2>
 
 <h1> Meta-population Model for Simulating Infectious Disease Spread </h1>
