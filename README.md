@@ -44,11 +44,11 @@ We use the Sørensen similarity index (SSI) to measure the similarities between 
 Many variations of this model have been proposed, such as the d-EPR and p-EPR models.
 
 <h2>d-EPR Model</h2>
-Unlike the EPR model, in the exploration phase individuals randomly select a new location, the d-EPR model (Luca Pappalardo et al. 2015) proposes that individuals visit new locations based on the gravity model, w with probability P<sub>ij</sub>.
+Unlike the EPR model, in the exploration phase individuals randomly select a new location, the d-EPR model (Luca Pappalardo et al. 2015) proposes that individuals visit new locations based on the gravity model, with probability P<sub>ij</sub>.
 
 
 <h2>PEPR Model</h2>
-Unlike the EPR model, in the exploration phase individuals randomly select a new location, the Preferential Exploration and Preferential Return (PEPR) model (Schläpfer Markus et al., 2021) that when individuals explore new locations, they tend to favor areas that are frequently visited. Specifically, exploration direction is biased toward regions with high visitation with distribution P(&theta; ; R,v).
+Unlike the EPR model, in the exploration phase individuals randomly select a new location, the Preferential Exploration and Preferential Return (PEPR) model (Schläpfer Markus et al., 2021) states that when individuals explore new locations, they tend to favor areas that are frequently visited. Specifically, exploration direction is biased toward regions with high visitation with distribution P(&theta;; R,v).
 
 
 <h2>**Comparison</h2>
