@@ -93,8 +93,8 @@ From the outbreak location set N<sub>I</sub>, effective distance predicts arriva
 
 <h1> Optimization Algorithms on Controlling Infectious Disease Spread </h1>
 
-<h2> genetic algorithm </h2>h2> 
-<p>References: </p>
+<h2> genetic algorithm </h2> 
+<p> References: </p>
 <p>[1] Barbosa, H., Barthelemy, M., Ghoshal, G., James, C. R., Lenormand, M., Louail, T., ... & Tomasini, M. (2018). Human mobility: Models and applications. Physics Reports, 734, 1-74.</p>
 <p>[2] Belik, V., Geisel, T., & Brockmann, D. (2011). Natural human mobility patterns and spatial spread of infectious diseases. Physical Review X, 1(1), 011001.</p>
 <p>[3] Simini, F., González, M. C., Maritan, A., & Barabási, A. L. (2012). A universal model for mobility and migration patterns. Nature, 484(7392), 96-100.</p>
