@@ -107,6 +107,7 @@ From the outbreak location set N<sub>I</sub>, effective distance predicts arriva
 <p> [8] Zhong, L., Diagne, M., Wang, W., & Gao, J. (2021). Country distancing increase reveals the effectiveness of travel restrictions in stopping COVID-19 transmission. Communications Physics, 4(1), 121. </p>
 <p> [9] Wang, Y., Zhong, L., Du, J., Gao, J., & Wang, Q. (2022). Identifying the shifting sources to predict the dynamics of COVID-19 in the US. Chaos: An Interdisciplinary Journal of Nonlinear Science, 32(3).
 <p> [10] Zhong, L., Dong, L., Wang, Q., Song, C., & Gao, J. (2024). Universal spatial inflation of human mobility. arXiv preprint arXiv:2406.06889. <p>
+<p> [11] Zhong, L., Dong, L., Wang, Q., Song, C., & Gao, J. (2025). Switching exploration modes in human mobility. arXiv preprint <p>
 
 
 
