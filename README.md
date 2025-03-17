@@ -32,6 +32,10 @@ We use the Sørensen similarity index (SSI) to measure the similarities between 
 <p align="center"> <i> SSI=2 &sum; <sub>ij</sub> min (T<sub>ij</sub> <sup>model</sup>, T<sub>ij</sub><sup>data</sup>)/(&sum; T<sub>ij</sub> <sup>model</sup>+ &sum; T<sub>ij</sub><sup>data</sup>)
 
 *** Some input datasets are fabricated.
+
+<p align="center">
+	<img src="compare_models.png" width="800" height="500" />
+<p>
   
 <h1> Individual Mobility Model </h1>
 
