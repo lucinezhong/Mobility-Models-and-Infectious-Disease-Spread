@@ -50,6 +50,8 @@ Unlike the EPR model, in the exploration phase individuals randomly select a new
 <h2>PEPR Model</h2>
 Unlike the EPR model, in the exploration phase individuals randomly select a new location, the Preferential Exploration and Preferential Return (PEPR) model (Schläpfer Markus et al., 2021) states that when individuals explore new locations, they tend to favor areas that are frequently visited. Specifically, exploration direction is biased toward regions with high visitation with distribution P(&theta;; R,v).
 
+<h2>Switch Model</h2>
+This model is inspired by the observation that human mobility exhibits distinct spatial and topological characteristics: it is modular, and within each module, there are hub locations that facilitate revisitation. This configuration demonstrates high modularity but low clustering coefficients. To reproduce it, we (Lu Zhong et al., 2024; Lu Zhong et al., 2025) propose the 'switch model' to enable mechanisms that govern transitions both within and across modules.
 
 <h2>**Comparison</h2>
 
