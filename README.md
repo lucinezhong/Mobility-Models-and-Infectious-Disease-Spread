@@ -74,7 +74,7 @@ From the initial outbreak location k, effective distance predicts arrival times,
 
 
 <h2>  Metapopulation Model with Multiple OLs </h2>
-As intervention measures and travel restrictions vary across regions and outbreak locations shift with differing infection levels, we propose the SIR-Metapopulation Model with Multiple Outbreak Locations (OLs) and a dynamic flow matrix P<sub>mn</sub> (t). This model accounts for evolving mobility patterns and region-specific control strategies, enabling a more adaptive representation of disease spread in heterogeneous environments.
+As intervention measures and travel restrictions vary across regions and outbreak locations shift with differing infection levels, we propose the SIR-Metapopulation Model with Multiple Outbreak Locations (OLs) and a dynamic flow matrix P<sub>mn</sub> (t). This model accounts for evolving mobility patterns and region-specific control strategies, enabling a more adaptive representation of disease spread in changing environments.
 
 <p align="center"> <i> ṡ<sub>n</sub>=-&alpha;(t) s<sub>n</sub>i<sub>n</sub> &sigma;(i<sub>n</sub>/&varepsilon;) +&gamma;(t) &sum;<sub>m &ne; n</sub> P<sub>mn</sub>(t) (s<sub>m</sub>-s<sub>n</sub>)
 <p align="center"> <i> i̇<sub>n</sub>=&alpha;(t) s<sub>n</sub>i<sub>n</sub> &sigma;(i<sub>n</sub>/&varepsilon;) -&beta;(t)i<sub>n</sub> +&gamma;(t) &sum;<sub>m &ne; n</sub> P<sub>mn</sub>(t) (i<sub>m</sub>-i<sub>n</sub>)
