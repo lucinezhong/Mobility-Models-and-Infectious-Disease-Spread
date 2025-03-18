@@ -34,7 +34,7 @@ We use the Sørensen similarity index (SSI) to measure the similarities between 
 *** Some input datasets are fabricated.
 
 <p align="center">
-	<img src="comparison_figure.png" width="1000" height="300" />
+	<img src="comparison_figure.png" width="900" height="300" />
 <p>
   
 <h1> Individual Mobility Model </h1>
