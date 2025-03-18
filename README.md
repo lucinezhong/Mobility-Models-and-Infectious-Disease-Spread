@@ -35,7 +35,7 @@ Results: The Gravity model reports an SSI of 0.56, while the Radiation model rec
 
 
 <p align="center">
-	<img src="comparison_figure.png" width="500" height="250" />
+	<img src="comparison_figure.png" width="800" height="300" />
 <p>
   
 <h1> Individual Mobility Model </h1>
@@ -61,7 +61,7 @@ This model is inspired by the observation that human mobility exhibits distinct 
 <h2>**Comparison</h2>
 
 <p align="center">
-	<img src="comparison_individual.png" width="900" height="300" />
+	<img src="comparison_individual.png" width="500" height="250" />
 <p>
 
 <h1> Meta-population Model for Simulating Infectious Disease Spread </h1>
