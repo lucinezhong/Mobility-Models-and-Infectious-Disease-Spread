@@ -60,6 +60,10 @@ This model is inspired by the observation that human mobility exhibits distinct 
 
 <h2>**Comparison</h2>
 
+<p align="center">
+	<img src="comparison_individual.png" width="900" height="300" />
+<p>
+
 <h1> Meta-population Model for Simulating Infectious Disease Spread </h1>
 
 <h2>  SIR-Metapopulation Model </h2>
