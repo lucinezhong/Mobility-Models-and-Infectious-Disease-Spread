@@ -35,7 +35,7 @@ Results: The Gravity model reports an SSI of 0.56, while the Radiation model rec
 
 
 <p align="center">
-	<img src="comparison_figure.png" width="900" height="300" />
+	<img src="comparison_figure.png" width="500" height="250" />
 <p>
   
 <h1> Individual Mobility Model </h1>
