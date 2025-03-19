@@ -1,7 +1,7 @@
 <h1> Mobility Models and Infectious Disease Spread on Mobility Networks </h1>
 
 <p>
-This repository includes codes and analyses of the collective mobility model, individual mobility model, infectious disease model on the human mobility network, and optimization algorithm on controlling network infections.
+This repository includes codes and analyses of the collective mobility model, individual mobility model, infectious disease model on the human mobility network, and  algorithms on controlling network infections.
 
 <h1> Collective Mobility Model </h1>
 
