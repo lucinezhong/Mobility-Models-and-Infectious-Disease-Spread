@@ -11,6 +11,7 @@ import pickle
 
 import EPR_model
 import d_EPR_model
+import Switch_model
 
 def simulation_setting():
     user_list=[0,1,2,3,4]
@@ -40,13 +41,27 @@ def parameter_setting(model_which):
         gamma=-0.21
         beta_r=-1.2
         beta_t=-1.2
+        return rho, gamma, beta_r, beta_t
 
-    return rho, gamma, beta_r, beta_t
+    if model_which=='Switch_model':
+        rho_w = 0.6
+        gamma_w = -0.21
+        beta_r = -1.2
+        beta_t = -1.2
+
+        P_switch = 0.1
+        rho_c=0.6
+        gamma_c_slope=-0.12
+
+        rgc_exponent=-1.2
+        return P_switch,gamma_w,gamma_c_slope,rho_w,rho_c,beta_r,beta_t, rgc_exponent
+
 
 if __name__ == "__main__":
 
     model_which = 'EPR_model'
     model_which = 'd_EPR_model'
+    model_which = 'Switch_model'
 
     if model_which=='EPR_model':
         rho, gamma, beta_r, beta_t = parameter_setting(model_which)
@@ -66,7 +81,14 @@ if __name__ == "__main__":
         model_test = d_EPR_model.d_EPR_model(user_list, rho, gamma, beta_r, beta_t)
         df = model_test.simulation(usr_Status, region_Status)
 
+    if model_which=='Switch_model':
+        P_switch,gamma_w,gamma_c_slope,rho_w,rho_c,beta_r,beta_t, rgc_exponent= parameter_setting(model_which)
+        user_list, home_list, home_label, user_step_list=simulation_setting()
 
+        ####start
+        usr_Status = Switch_model.initialize(user_list, home_list, home_label, user_step_list,rgc_exponent)
+        model_test = Switch_model.Switch_model(user_list,P_switch,gamma_w,gamma_c_slope,rho_w,rho_c,beta_r,beta_t)
+        df = model_test.simulation(usr_Status)
 
     df.to_csv('Results/'+model_which+'_individual_trajectory.csv')
 
