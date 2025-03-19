@@ -35,7 +35,7 @@ Results: The Gravity model reports an SSI of 0.56, while the Radiation model rec
 
 
 <p align="center">
-	<img src="comparison_figure.png" width="800" height="300" />
+	<img src="comparison_figure.png" width="900" height="350" />
 <p>
   
 <h1> Individual Mobility Model </h1>
@@ -102,7 +102,7 @@ From the outbreak location set N<sub>I</sub>, effective distance predicts arriva
 <p align="center"> D<sub>m|N<sub>I</sub>  &sim; T<sub>m</sub><sup>arrival</sup>
 
 <p align="center">
-	<img src="Infection_vesus_distance.png" width="600" height="300" />
+	<img src="Infection_vesus_distance.png" width="700" height="350" />
 <p>
 	
 <h2>  POI-Metapopulation Model </h2>
