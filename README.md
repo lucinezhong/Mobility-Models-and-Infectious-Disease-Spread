@@ -106,6 +106,7 @@ From the outbreak location set N<sub>I</sub>, effective distance predicts arriva
 <p>
 	
 <h2>  POI-Metapopulation Model </h2>
+Chang et al. (2021) proposed a bipartite graph model that links Census Block Groups (CBGs), where people reside, to Points of Interest (POIs) they visit. In this model, the researchers overlaid the metapopulation to the bipartite to include disease transmission within the CBGs and also  disease transmission by visiting the POIs. 
 
 <h1> Machine Learning Algorithms</h1>
 
