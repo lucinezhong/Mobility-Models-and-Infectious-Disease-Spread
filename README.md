@@ -62,7 +62,7 @@ This model is inspired by the observation that human mobility exhibits distinct 
 The EPR model generates trajectories with shorter distances traveled around the home, while the d_EPR model generates trajectories that follow the probability of country outflows, resulting in longer-distance paths and greater connectivity.
 
 <p align="center">
-	<img src="comparison_individual.png" width="600" height="300" />
+	<img src="comparison_individual.png" width="900" height="300" />
 <p>
 
 <h1> Meta-population Model for Simulating Infectious Disease Spread </h1>
