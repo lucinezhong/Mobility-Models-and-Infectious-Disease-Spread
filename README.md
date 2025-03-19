@@ -35,7 +35,7 @@ Results: The Gravity model reports an SSI of 0.56, while the Radiation model rec
 
 
 <p align="center">
-	<img src="comparison_figure.png" width="900" height="300" />
+	<img src="comparison_figure.png" width="800" height="300" />
 <p>
   
 <h1> Individual Mobility Model </h1>
@@ -59,6 +59,11 @@ Unlike the EPR model, in the exploration phase individuals randomly select a new
 This model is inspired by the observation that human mobility exhibits distinct spatial and topological characteristics: it is modular, and within each module, there are hub locations that facilitate revisitation. This configuration demonstrates high modularity but low clustering coefficients. To reproduce it, we (Lu Zhong et al., 2024; Lu Zhong et al., 2025) propose the 'switch model' to enable mechanisms that govern transitions both within and across modules.
 
 <h2>**Comparison</h2>
+The EPR model generates trajectories with shorter distances traveled around the home, while the d_EPR model generates trajectories that follow the probability of country outflows, resulting in longer-distance paths and greater connectivity.
+
+<p align="center">
+	<img src="comparison_individual.png" width="600" height="300" />
+<p>
 
 <h1> Meta-population Model for Simulating Infectious Disease Spread </h1>
 
