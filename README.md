@@ -119,9 +119,10 @@ From the outbreak location set N<sub>I</sub>, effective distance predicts arriva
 <p> [6] Pappalardo, L., Simini, F., Rinzivillo, S., Pedreschi, D., Giannotti, F., & Barabási, A. L. (2015). Returners and explorers dichotomy in human mobility. Nature communications, 6(1), 8166. </p>
 <p> [7] Brockmann, D., & Helbing, D. (2013). The hidden geometry of complex, network-driven contagion phenomena. science, 342(6164), 1337-1342. </p>
 <p> [8] Zhong, L., Diagne, M., Wang, W., & Gao, J. (2021). Country distancing increase reveals the effectiveness of travel restrictions in stopping COVID-19 transmission. Communications Physics, 4(1), 121. </p>
-<p> [9] Wang, Y., Zhong, L., Du, J., Gao, J., & Wang, Q. (2022). Identifying the shifting sources to predict the dynamics of COVID-19 in the US. Chaos: An Interdisciplinary Journal of Nonlinear Science, 32(3).
-<p> [10] Zhong, L., Dong, L., Wang, Q., Song, C., & Gao, J. (2024). Universal spatial inflation of human mobility. arXiv preprint arXiv:2406.06889. <p>
-<p> [11] Zhong, L., Dong, L., Wang, Q., Song, C., & Gao, J. (2025). Switching exploration modes in human mobility. arXiv preprint <p>
+<p> [9] Wang, Y., Zhong, L., Du, J., Gao, J., & Wang, Q. (2022). Identifying the shifting sources to predict the dynamics of COVID-19 in the US. Chaos: An Interdisciplinary Journal of Nonlinear Science, 32(3).</p>
+<p> [10] Zhong, L., Dong, L., Wang, Q., Song, C., & Gao, J. (2024). Universal spatial inflation of human mobility. arXiv preprint arXiv:2406.06889. </p>
+<p> [11] Zhong, L., Dong, L., Wang, Q., Song, C., & Gao, J. (2025). Switching exploration modes in human mobility. arXiv preprint </p>
+<p> [12] Chang, S., Pierson, E., Koh, P. W., Gerardin, J., Redbird, B., Grusky, D., & Leskovec, J. (2021). Mobility network models of COVID-19 explain inequities and inform reopening. Nature, 589(7840), 82-87.</p>
 
 
 
