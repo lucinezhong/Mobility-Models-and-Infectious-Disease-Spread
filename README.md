@@ -96,11 +96,15 @@ witch changing outbreak location set N<sub>I</sub>(t), given as:
 s<sub>k</sub>=s<sub>k</sub><sup>real</sup>, i<sub>k</sub>=i<sub>k</sub><sup>real</sup>, r=r<sub>k</sub><sup>real</sup>, &forall; k &in; N<sub>I</sub>(t)
 
 <b>Multiple-OLs Effective Distance</b> (Lu Zhong et al. 2021): By defining the effective distance d<sub>mn</sub>=1-logP<sub>mn</sub>, the distance from mutilpe outbreak locations N<sub>I</sub> to node m is computed as,
-<p align="center"> D<sub>m|N<sub>I</sub> </sub>=log M/ &sum;<sub>n<sub>i</sub> &in;  N<sub>I</sub> </sub> 1/e<sup>d<sub>m|n<sub>i</sub> </sup> 
+<p align="center"> D<sub>m|N<sub>I</sub> </sub>=log (1/ &sum;<sub>n<sub>i</sub> &in;  N<sub>I</sub> </sub> 1/e<sup>d<sub>m|n<sub>i</sub> </sup> )
 
 From the outbreak location set N<sub>I</sub>, effective distance predicts arrival times,
 <p align="center"> D<sub>m|N<sub>I</sub>  &sim; T<sub>m</sub><sup>arrival</sup>
 
+<p align="center">
+	<img src="Infection_vesus_distance.png" width="600" height="300" />
+<p>
+	
 <h2>  POI-Metapopulation Model </h2>
 
 <h1> Optimization Algorithms on Controlling Infectious Disease Spread </h1>
