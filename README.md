@@ -107,7 +107,7 @@ From the outbreak location set N<sub>I</sub>, effective distance predicts arriva
 	
 <h2>  POI-Metapopulation Model </h2>
 
-<h1> Optimization Algorithms on Controlling Infectious Disease Spread </h1>
+<h1> Machine Learning Algorithms</h1>
 
 <h2> genetic algorithm </h2> 
 <p> References: </p>
