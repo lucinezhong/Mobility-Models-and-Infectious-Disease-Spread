@@ -3,6 +3,10 @@
 <p>
 This repository includes codes and analyses of the collective mobility model, individual mobility model, infectious disease model on the human mobility network, and  algorithms on controlling network infections.
 
+<p align="center">
+	<img src="all_diagram.png" width="900" height="350" />
+<p>
+
 <h1> Collective Mobility Model </h1>
 
 <h2>Gravity Model</h2>
