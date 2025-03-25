@@ -108,9 +108,18 @@ From the outbreak location set N<sub>I</sub>, effective distance predicts arriva
 <h2>  POI-Metapopulation Model </h2>
 Chang et al. (2021) proposed a bipartite graph model that links Census Block Groups (CBGs), where people reside, to Points of Interest (POIs) they visit. In this model, the researchers overlaid the metapopulation to the bipartite to include disease transmission within the CBGs and also  disease transmission by visiting the POIs. 
 
-<h1> Machine Learning Algorithms</h1>
+<h2>  Agent-based model </h2>
+Agent-based epidemic models (ABMs) are powerful computational tools used to simulate the spread of infectious diseases within a population by modeling the behaviors and interactions of individual entities, or "agents." Unlike traditional compartmental models that rely on population-level assumptions and averaged dynamics, ABMs capture heterogeneity in individual attributes, such as age, behavior, location, and health status, as well as complex contact structures and stochastic transmission events.
 
-<h2> genetic algorithm </h2> 
+<p align="center">
+	<img src="agent_model_diagram.png" width="700" height="350" />
+<p>
+In real-world populations, individuals don’t mix randomly—people interact within structured social, spatial, and organizational patterns. Networks represent these patterns by modeling agents as nodes and their interactions or relationships (e.g., physical contact, shared spaces, communication) as edges. By embedding agents in a network, ABMs can more realistically simulate how diseases spread through actual contact pathways
+	
+<p align="center">
+	<img src="agent_model_network.png" width="700" height="350" />
+<p>
+
 <p> References: </p>
 <p>[1] Barbosa, H., Barthelemy, M., Ghoshal, G., James, C. R., Lenormand, M., Louail, T., ... & Tomasini, M. (2018). Human mobility: Models and applications. Physics Reports, 734, 1-74.</p>
 <p>[2] Belik, V., Geisel, T., & Brockmann, D. (2011). Natural human mobility patterns and spatial spread of infectious diseases. Physical Review X, 1(1), 011001.</p>
