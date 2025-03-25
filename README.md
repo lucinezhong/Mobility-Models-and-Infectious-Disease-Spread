@@ -112,12 +112,12 @@ Chang et al. (2021) proposed a bipartite graph model that links Census Block Gro
 Agent-based epidemic models (ABMs) are powerful computational tools used to simulate the spread of infectious diseases within a population by modeling the behaviors and interactions of individual entities, or "agents." Unlike traditional compartmental models that rely on population-level assumptions and averaged dynamics, ABMs capture heterogeneity in individual attributes, such as age, behavior, location, and health status, as well as complex contact structures and stochastic transmission events.
 
 <p align="center">
-	<img src="agent_model_diagram.png" width="700" height="250" />
+	<img src="agent_model_diagram.png" width="700" height="300" />
 <p>
 In real-world populations, individuals don’t mix randomly—people interact within structured social, spatial, and organizational patterns. Networks represent these patterns by modeling agents as nodes and their interactions or relationships (e.g., physical contact, shared spaces, communication) as edges. By embedding agents in a network, ABMs can more realistically simulate how diseases spread through actual contact pathways
 	
 <p align="center">
-	<img src="agent_model_network.png" width="700" height="250" />
+	<img src="agent_model_network.png" width="700" height="300" />
 <p>
 
 <p> References: </p>
