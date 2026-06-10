@@ -178,6 +178,7 @@ Zhong et al (2026) prposed the sptial baeysian reneal model, extendes from the b
 <p> [10] Wang, Y., Zhong, L., Du, J., Gao, J., & Wang, Q. (2022). Identifying the shifting sources to predict the dynamics of COVID-19 in the US. Chaos: An Interdisciplinary Journal of Nonlinear Science, 32(3).</p>
 <p> [11] Zhong, L., Dong, L., Wang, Q.R., Song, C. and Gao, J., (2025). Universal expansion of human mobility across urban scales. Nature Cities, pp.1-5.
 <p> [12] Zhong, L., Dong, L., Wang, Q., Song, C., & Gao, J. (2026). Switching exploration modes in human mobility. Journal of the Royal Society Interface </p>
+<p> [13] Zhong, L., Bleichrodt, A., Pandey, A., Kunkel, D. and Rennert, L., 2026. A spatial EHR and wastewater-informed modeling framework for respiratory virus prediction under sparse and missing data conditions. medRxiv, pp.2026-05.  </p>
 
 
 
