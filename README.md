@@ -394,7 +394,7 @@
 <h2 id="agent-based-models">Agent-based Models</h2>
 
 <p>
-  Agent-based epidemic models (ABMs) simulate the spread of infectious diseases by modeling the behaviors and interactions of individual agents. Unlike compartmental models that rely on population-level assumptions, ABMs capture heterogeneity in age, behavior, location, health status, and contact patterns.
+  Agent-based epidemic models (ABMs) simulate the spread of infectious diseases by modeling the behaviors and interactions of individual agents. Unlike compartmental models that rely on population-level assumptions, ABMs capture heterogeneity in age, behavior, location, health status, and contact patterns (Zhang et al. 2018).
 </p>
 
 <p align="center">
@@ -544,6 +544,8 @@
 <p>[12] Zhong, L., Dong, L., Wang, Q., Song, C., &amp; Gao, J. (2026). Switching exploration modes in human mobility. <i>Journal of the Royal Society Interface</i>.</p>
 
 <p>[13] Zhong, L., Bleichrodt, A., Pandey, A., Kunkel, D., &amp; Rennert, L. (2026). A spatial EHR and wastewater-informed modeling framework for respiratory virus prediction under sparse and missing data conditions. <i>medRxiv</i>, pp. 2026-05.</p>
+
+<p>[14] Zhang, Q., Zhong, L., Gao, S. and Li, X., 2018. Optimizing HIV interventions for multiplex social networks via partition-based random search. IEEE transactions on cybernetics, 48(12), pp.3411-3419.</p>
 
 <hr>
 
