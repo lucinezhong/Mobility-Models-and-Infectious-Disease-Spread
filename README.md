@@ -1,11 +1,48 @@
 <h1> Mobility Models and Infectious Disease Spread on Mobility Networks </h1>
 
 <p>
-This repository includes codes and analyses of the collective mobility model, individual mobility model, infectious disease model on the human mobility network, and  algorithms on controlling network infections.
- 
+This repository includes codes and analyses of the collective mobility model, individual mobility model, infectious disease model on the human mobility network, and algorithms on controlling network infections.
+</p>
+
 <p align="center">
-	<img src="all_diagram.png" width="700" height="350" />
-<p>
+    <img src="all_diagram.png" width="700" height="350" />
+</p>
+
+<h1> Table of Contents </h1>
+
+<ul>
+<li><a href="#collective">Collective Mobility Model</a>
+    <ul>
+        <li><a href="#gravity">Gravity Model</a></li>
+        <li><a href="#radiation">Radiation Model</a></li>
+        <li><a href="#visitation">Visitation Model</a></li>
+        <li><a href="#collective-comparison">Comparison of Collective Mobility Models</a></li>
+    </ul>
+</li>
+
+<li><a href="#individual">Individual Mobility Model</a>
+    <ul>
+        <li><a href="#epr">EPR Model</a></li>
+        <li><a href="#depr">d-EPR Model</a></li>
+        <li><a href="#pepr">PEPR Model</a></li>
+        <li><a href="#switch">Switch Model</a></li>
+        <li><a href="#individual-comparison">Comparison of Individual Mobility Models</a></li>
+    </ul>
+</li>
+
+<li><a href="#metapopulation">Meta-population Model for Simulating Infectious Disease Spread</a>
+    <ul>
+        <li><a href="#sir">SIR-Metapopulation Model</a></li>
+        <li><a href="#multiple-ols">Metapopulation Model with Multiple Outbreak Locations</a></li>
+        <li><a href="#poi">POI-Metapopulation Model</a></li>
+        <li><a href="#abm">Agent-based Model</a></li>
+        <li><a href="#wastewater">Metapopulation Model and Wastewater Surveillance</a></li>
+    </ul>
+</li>
+
+<li><a href="#references">References</a></li>
+
+</ul>
 
 <h1> Collective Mobility Model </h1>
 
@@ -123,6 +160,10 @@ In real-world populations, individuals don’t mix randomly—people interact wi
 <p align="center">
 	<img src="agent_model_network.png" width="700" height="300" />
 <p>
+
+<h2>  Metapopulation Model and Wastewater </h2>
+
+Zhong et al (2026) prposed the sptial baeysian reneal model, extendes from the bayesian renewal model with reliability-weighted wasatweater and mboility netowrk, can forecast infectiou sdieasese.
 
 <p> References: </p>
 <p>[1] Barbosa, H., Barthelemy, M., Ghoshal, G., James, C. R., Lenormand, M., Louail, T., ... & Tomasini, M. (2018). Human mobility: Models and applications. Physics Reports, 734, 1-74.</p>
