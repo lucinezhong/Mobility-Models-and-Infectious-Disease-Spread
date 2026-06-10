@@ -440,7 +440,7 @@
 </p>
 
 <p>
-  Using effective-distance theory, the outbreak source can be estimated by minimizing the variance between effective distances and observed arrival times:
+  Using effective-distance theory, the outbreak source can be estimated by minimizing the variance between effective distances and observed arrival times (Wang,2022):
 </p>
 
 <p align="center">
@@ -459,7 +459,7 @@
 <h2 id="travel-restrictions">Travel Restrictions</h2>
 
 <p>
-  Travel restrictions reduce infection transmission by decreasing mobility flows between regions. Let <i>P<sub>mn</sub></i> denote the mobility flow from region <i>m</i> to region <i>n</i>. An intervention modifies the flow matrix as:
+  Travel restrictions reduce infection transmission by decreasing mobility flows between regions (Zhong 2021). Let <i>P<sub>mn</sub></i> denote the mobility flow from region <i>m</i> to region <i>n</i>. An intervention modifies the flow matrix as:
 </p>
 
 <p align="center">
