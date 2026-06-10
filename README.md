@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Human Mobility, Mobility Networks, and Epidemic Intelligence</title>
-</head>
+
 
 <body>
 
