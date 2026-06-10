@@ -480,7 +480,6 @@
 
 <ul>
   <li>uniform reduction of all flows;</li>
-  <li>distance-based travel restrictions;</li>
   <li>targeted removal of high-risk routes;</li>
   <li>dynamic travel controls based on epidemic risk.</li>
 </ul>
