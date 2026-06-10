@@ -5,7 +5,7 @@
 <h1 id="top">Human Mobility, Mobility Networks, and Epidemic Intelligence</h1>
 
 <p>
-  <b>This repository includes codes and analyses of the collective mobility model, individual mobility model, infectious disease model on the human mobility network, and algorithms on controlling network infections.</b>
+  <b>TThis repository provides codes, analyses, and research notes on human mobility modeling and infectious disease spreading. Topics include collective and individual mobility models, epidemic dynamics on mobility networks, and network-based approaches for epidemic prediction and control.</b>
 </p>
 
 <p align="center">
