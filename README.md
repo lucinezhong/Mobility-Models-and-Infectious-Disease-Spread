@@ -1,186 +1,560 @@
-<h1> Mobility Models and Infectious Disease Spread on Mobility Networks </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Human Mobility, Mobility Networks, and Epidemic Intelligence</title>
+</head>
+
+<body>
+
+<h1 id="top">Human Mobility, Mobility Networks, and Epidemic Intelligence</h1>
 
 <p>
-This repository includes codes and analyses of the collective mobility model, individual mobility model, infectious disease model on the human mobility network, and algorithms on controlling network infections.
+  <b>This repository includes codes and analyses of the collective mobility model, individual mobility model, infectious disease model on the human mobility network, and algorithms on controlling network infections.</b>
 </p>
 
 <p align="center">
-    <img src="all_diagram.png" width="700" height="350" />
+  <img src="all_diagram.png" width="800" alt="Framework diagram">
 </p>
 
-<h1> Table of Contents </h1>
+<hr>
+
+<h1>Table of Contents</h1>
 
 <ul>
-<li><a href="#collective">Collective Mobility Model</a>
+  <li><a href="#human-mobility">1. Human Mobility</a>
     <ul>
-        <li><a href="#gravity">Gravity Model</a></li>
-        <li><a href="#radiation">Radiation Model</a></li>
-        <li><a href="#visitation">Visitation Model</a></li>
-        <li><a href="#collective-comparison">Comparison of Collective Mobility Models</a></li>
+      <li><a href="#collective-mobility">1.1 Collective Mobility</a>
+        <ul>
+          <li><a href="#gravity-model">Gravity Model</a></li>
+          <li><a href="#radiation-model">Radiation Model</a></li>
+          <li><a href="#visitation-model">Visitation Model</a></li>
+          <li><a href="#comparison-collective">Comparison of Collective Mobility Models</a></li>
+        </ul>
+      </li>
+      <li><a href="#individual-mobility">1.2 Individual Mobility</a>
+        <ul>
+          <li><a href="#epr-model">EPR Model</a></li>
+          <li><a href="#d-epr-model">d-EPR Model</a></li>
+          <li><a href="#pepr-model">PEPR Model</a></li>
+          <li><a href="#switch-model">Switch Model</a></li>
+          <li><a href="#comparison-individual">Comparison of Individual Mobility Models</a></li>
+        </ul>
+      </li>
     </ul>
-</li>
+  </li>
 
-<li><a href="#individual">Individual Mobility Model</a>
+  <li><a href="#mobility-networks">2. Mobility Networks</a>
     <ul>
-        <li><a href="#epr">EPR Model</a></li>
-        <li><a href="#depr">d-EPR Model</a></li>
-        <li><a href="#pepr">PEPR Model</a></li>
-        <li><a href="#switch">Switch Model</a></li>
-        <li><a href="#individual-comparison">Comparison of Individual Mobility Models</a></li>
+      <li><a href="#network-topology">Network Topology</a></li>
+      <li><a href="#effective-distance">Effective Distance</a></li>
+      <li><a href="#effective-distance-multiple-outbreaks">Effective Distance with Multiple Outbreak Locations</a></li>
     </ul>
-</li>
+  </li>
 
-<li><a href="#metapopulation">Meta-population Model for Simulating Infectious Disease Spread</a>
+  <li><a href="#epidemic-dynamics">3. Epidemic Dynamics</a>
     <ul>
-        <li><a href="#sir">SIR-Metapopulation Model</a></li>
-        <li><a href="#multiple-ols">Metapopulation Model with Multiple Outbreak Locations</a></li>
-        <li><a href="#poi">POI-Metapopulation Model</a></li>
-        <li><a href="#abm">Agent-based Model</a></li>
-        <li><a href="#wastewater">Metapopulation Model and Wastewater Surveillance</a></li>
+      <li><a href="#sir-metapopulation">SIR Metapopulation Model</a></li>
+      <li><a href="#poi-metapopulation">POI Metapopulation Model</a></li>
+      <li><a href="#agent-based-models">Agent-based Models</a></li>
+      <li><a href="#wastewater-surveillance-models">Wastewater Surveillance Models</a></li>
     </ul>
-</li>
+  </li>
 
-<li><a href="#references">References</a></li>
+  <li><a href="#epidemic-intelligence-control">4. Epidemic Intelligence and Control</a>
+    <ul>
+      <li><a href="#source-identification">Source Identification</a></li>
+      <li><a href="#travel-restrictions">Travel Restrictions</a></li>
+      <li><a href="#ehr-wastewater-forecasting">EHR and Wastewater-Informed Forecasting</a></li>
+      <li><a href="#multi-pathogen-intelligence">Multi-pathogen Epidemic Intelligence</a></li>
+    </ul>
+  </li>
 
+  <li><a href="#references">References</a></li>
 </ul>
 
-<h1> Collective Mobility Model </h1>
+<hr>
 
-<h2>Gravity Model</h2>
+<h1 id="human-mobility">1. Human Mobility</h1>
 
-Inspired by Newton's law of gravitation, George K. Zipf proposed an equation to model mobility flows. The model assumes that the number of trips originating from location i is proportional to its population, the attractiveness of destination j is proportional to its population at the cost of distance, 
-<p align="center"> <I> T<sub>ij</sub> = K M<sub>i</sub>N<sub>j</sub> f(r<sub>ij</sub>)
+<p>
+  Human mobility can be studied from two complementary perspectives. Collective mobility models describe aggregated population flows between locations, while individual mobility models describe the trajectories and behavioral mechanisms of individual travelers. Together, these models provide the foundation for constructing mobility networks and understanding epidemic spreading processes.
+</p>
 
-<p>where K is constant, the M<sub>i</sub>  and N<sub>j</sub> repsectively resprsents the massesses. f(r<sub>ij</sub>) represetens the descreasing fucton of idstance. The most common used form for masses as M<sub>i</sub>=P<sub>i</sub><sup>&alpha;</sup> and  N<sub>j</sub>=P<sub>j</sub><sup>&alpha;</sup>.  </p>
+<h2 id="collective-mobility">1.1 Collective Mobility</h2>
 
-<h2>Radiation Model</h2>
-The Radiation Model（Filippo Simini et al., 2012), presents a parameter-free approach to estimating commuting flues between two locations. Unlike traditional gravity-based models, which rely on tunable parameters to fit empirical data, the Radiation Model derives mobility flows from population distribution alone, making it a more universal and scalable method. The model assumes that the number of trips from origin location i to destination j depends on not only the population of two locations but also the presence of alternative opportunities in the surrounding areas. By introducing S<sub>ij</sub>, the population within the radius of  r<sub>ij</sub> centered around location i, the model predicts the flow as
-<p align="center"> <i>E(T<sub>ij</sub>) = T<sub>i</sub>M<sub>i</sub>N<sub>j</sub> / (M<sub>i</sub> + S<sub>ij</sub>)(M<sub>i</sub> + N<sub>j</sub> + S<sub>ij</sub>)</i> </p>
+<h3 id="gravity-model">Gravity Model</h3>
 
-
-<h2>Visitation Model</h2>
-
-Dr. Markus and Dr. Dong (Schläpfer Markus et al., 2021), through extensive data analysis, identified a key relationship governing the frequency and spatial distribution of human visits. Their research reveals that the number of visitors  N<sub>i</sub> (r,f) at a location systematically decreases with travel distance r and travel frequency f. The visitation density is defined as 
-&rho;<sub>i</sub>,
-<p align="center"> <i> &rho;<sub>i</sub> (r,f)= N<sub>i</sub> (r,f)/A(r)= &mu;<sub>i</sub>/(rf)<sup>&eta;</sup> </i>  </p>
-
-The average number of trips of those individuals live in location i to destination j cand be estimated as 
-<p align="center"> <i> T<sub>ij</sub> &approx; &mu;<sub>j</sub>A<sub>i</sub>/r<sub>ij</sub><sup>2</sup>ln(f<sub>max</sub>/f<sub>min</sub>) </i>  </p>
-where A<sub>i</sub> is the area of original location, r<sub>ij</sub> is the distance. &mu; is the location-specific attractiveness.
-  
-<h2>**Comparison</h2>
-We use the Sørensen similarity index (SSI) to measure the similarities between estimated flows and true flows between two locations. The SSI is between 0 and 1, higher value indicates higher similarity/accuracy.
-<p align="center"> <i> SSI=2 &sum; <sub>ij</sub> min (T<sub>ij</sub> <sup>model</sup>, T<sub>ij</sub><sup>data</sup>)/(&sum; T<sub>ij</sub> <sup>model</sup>+ &sum; T<sub>ij</sub><sup>data</sup>)
-
-Results: The Gravity model reports an SSI of 0.56, while the Radiation model records the lowest SSI at 0.46. Conversely, the Visitation model achieves the highest SSI of 0.7.
-
+<p>
+  Inspired by Newton's law of gravitation, George K. Zipf proposed an equation to model mobility flows. The model assumes that the number of trips originating from location <i>i</i> is proportional to its population, and the attractiveness of destination <i>j</i> is proportional to its population at the cost of distance.
+</p>
 
 <p align="center">
-	<img src="comparison_figure.png" width="900" height="350" />
+  <i>T<sub>ij</sub> = K M<sub>i</sub>N<sub>j</sub> f(r<sub>ij</sub>)</i>
+</p>
+
 <p>
-  
-<h1> Individual Mobility Model </h1>
+  where <i>K</i> is a constant, <i>M<sub>i</sub></i> and <i>N<sub>j</sub></i> represent the masses of the origin and destination, and <i>f(r<sub>ij</sub>)</i> is a decreasing function of distance. A commonly used form is
+  <i>M<sub>i</sub>=P<sub>i</sub><sup>&alpha;</sup></i> and
+  <i>N<sub>j</sub>=P<sub>j</sub><sup>&beta;</sup></i>.
+</p>
 
-<h2>EPR Model</h2>
+<h3 id="radiation-model">Radiation Model</h3>
 
-<p> The EPR (Exploration and Preferential Return) model (Song Chaoming et al., 2010) is a classical individual mobility model that describes human mobility dynamics based on two fundamental behavioral tendencies. This model has successfully captured individual mobility scaling, including 1) unique locations S(t) ~ t<sup>&mu;</sup> ; 2) Zipf's law of visitation frequency; 3) ultraslow diffusion </p>
-<p> Exploration – With probability P=&rho;S<sup>-&gamma;</sup>, the individual will explore a new location.</p> 
-<p> Preferential Return – With probability 1-P, the individual will return to a previously visited location i according to the locations' past visitation frequency f<sub>i<sub> .</p> 
+<p>
+  The Radiation Model (Simini et al., 2012) presents a parameter-free approach to estimating commuting flows between two locations. Unlike traditional gravity-based models, which rely on tunable parameters to fit empirical data, the Radiation Model derives mobility flows from population distribution alone.
+</p>
 
-Many variations of this model have been proposed, such as the d-EPR and p-EPR models.
-
-<h2>d-EPR Model</h2>
-Unlike the EPR model, in the exploration phase individuals randomly select a new location, the d-EPR model (Luca Pappalardo et al. 2015) proposes that individuals visit new locations based on the gravity model, with probability P<sub>ij</sub>.
-
-
-<h2>PEPR Model</h2>
-Unlike the EPR model, in the exploration phase individuals randomly select a new location, the Preferential Exploration and Preferential Return (PEPR) model (Schläpfer Markus et al., 2021) states that when individuals explore new locations, they tend to favor areas that are frequently visited. Specifically, exploration direction is biased toward regions with high visitation with distribution P(&theta;; R,v).
-
-<h2>Switch Model</h2>
-This model is inspired by the observation that human mobility exhibits distinct spatial and topological characteristics: it is modular, and within each module, there are hub locations that facilitate revisitation. This configuration demonstrates high modularity but low clustering coefficients. To reproduce it, we (Lu Zhong et al., 2024; Lu Zhong et al., 2025) propose the 'switch model' to enable mechanisms that govern transitions both within and across modules.
-
-<h2>**Comparison</h2>
-The EPR model generates trajectories with shorter distances traveled around the home, while the d_EPR model generates trajectories that follow the probability of country outflows, resulting in longer-distance paths and greater connectivity. The switch model enables modular-like behavior in human trajectory. 
+<p>
+  The model assumes that the number of trips from origin location <i>i</i> to destination <i>j</i> depends not only on the populations of the two locations but also on the presence of alternative opportunities in surrounding areas. By introducing <i>S<sub>ij</sub></i>, the population within radius <i>r<sub>ij</sub></i> centered around location <i>i</i>, the model predicts the flow as:
+</p>
 
 <p align="center">
-	<img src="comparison_individual.png" width="900" height="300" />
+  <i>
+    E(T<sub>ij</sub>) =
+    T<sub>i</sub>M<sub>i</sub>N<sub>j</sub>
+    /
+    (M<sub>i</sub> + S<sub>ij</sub>)(M<sub>i</sub> + N<sub>j</sub> + S<sub>ij</sub>)
+  </i>
+</p>
+
+<h3 id="visitation-model">Visitation Model</h3>
+
 <p>
-
-<h1> Meta-population Model for Simulating Infectious Disease Spread </h1>
-
-<h2>  SIR-Metapopulation Model </h2>
-The Susceptible-Infectious-Recovered (SIR) metapopulation model is a mathematical framework used to study the spread of infectious diseases across multiple, interconnected populations. Unlike the classic SIR model, which assumes a single well-mixed population, the metapopulation approach accounts for spatial heterogeneity by dividing the population into distinct subpopulations (or patches) connected by mobility or migration dynamics. In this framework let there be n regions (subpopulations), each governed by the standard SIR dynamics, where individuals exist in three states: susceptible s<sub>n</sub>, infected i<sub>n</sub>,  removed r<sub>n</sub>. Disease transmission within each subpopulation follows local interactions, while the inter-subpopulation spread is driven by travel dynamics, represented by the movement flow matrix P<sub>mn</sub>,  which quantifies the mobility of individuals between regions m and n,
-
-<p align="center"> <i> ṡ<sub>n</sub>=-&alpha; s<sub>n</sub>i<sub>n</sub> &sigma;(i<sub>n</sub>/&varepsilon;) +&gamma; &sum;<sub>m &ne; n</sub> P<sub>mn</sub> (s<sub>m</sub>-s<sub>n</sub>)
-<p align="center"> <i> i̇<sub>n</sub>=&alpha; s<sub>n</sub>i<sub>n</sub> &sigma;(i<sub>n</sub>/&varepsilon;) -&beta;i<sub>n</sub> +&gamma; &sum;<sub>m &ne; n</sub> P<sub>mn</sub> (i<sub>m</sub>-i<sub>n</sub>)
-
-witch single initial outbreak location k, given as:
-
-s<sub>k</sub>=s<sub>k</sub><sup>real</sup>, i<sub>k</sub>=i<sub>k</sub><sup>real</sup>, r=r<sub>k</sub><sup>real</sup>.
-
-<b>Effective Distance</b> (Brockmann D., Helbing D. 2013): By defining the effective distance d<sub>mn</sub>=1-logP<sub>mn</sub>, the distance from an arbitrary node n to node m is the lengths of shortest path ( &Gamma;) of effective distance,
-<p align="center"> D<sub>mn</sub>=&sum;<sub>(i,j)&in;&Gamma;</sub>   d<sub>ij</sub>
-
-From the initial outbreak location k, effective distance predicts arrival times,
-<p align="center"> D<sub>mk</sub> &sim; T<sub>m</sub><sup>arrival</sup>
-
-
-
-<h2>  Metapopulation Model with Multiple OLs </h2>
-As intervention measures and travel restrictions vary across regions and outbreak locations shift with differing infection levels, we propose the SIR-Metapopulation Model with Multiple Outbreak Locations (OLs) and a dynamic flow matrix P<sub>mn</sub> (t). This model accounts for evolving mobility patterns and region-specific control strategies, enabling a more adaptive representation of disease spread in changing environments.
-
-<p align="center"> <i> ṡ<sub>n</sub>=-&alpha;(t) s<sub>n</sub>i<sub>n</sub> &sigma;(i<sub>n</sub>/&varepsilon;) +&gamma;(t) &sum;<sub>m &ne; n</sub> P<sub>mn</sub>(t) (s<sub>m</sub>-s<sub>n</sub>)
-<p align="center"> <i> i̇<sub>n</sub>=&alpha;(t) s<sub>n</sub>i<sub>n</sub> &sigma;(i<sub>n</sub>/&varepsilon;) -&beta;(t)i<sub>n</sub> +&gamma;(t) &sum;<sub>m &ne; n</sub> P<sub>mn</sub>(t) (i<sub>m</sub>-i<sub>n</sub>)
-
-witch changing outbreak location set N<sub>I</sub>(t), given as:
-
-s<sub>k</sub>=s<sub>k</sub><sup>real</sup>, i<sub>k</sub>=i<sub>k</sub><sup>real</sup>, r=r<sub>k</sub><sup>real</sup>, &forall; k &in; N<sub>I</sub>(t)
-
-<b>Multiple-OLs Effective Distance</b> (Lu Zhong et al. 2021): By defining the effective distance d<sub>mn</sub>=1-logP<sub>mn</sub>, the distance from mutilpe outbreak locations N<sub>I</sub> to node m is computed as,
-<p align="center"> D<sub>m|N<sub>I</sub> </sub>=log (1/ &sum;<sub>n<sub>i</sub> &in;  N<sub>I</sub> </sub> 1/e<sup>d<sub>m|n<sub>i</sub> </sup> )
-
-From the outbreak location set N<sub>I</sub>, effective distance predicts arrival times,
-<p align="center"> D<sub>m|N<sub>I</sub>  &sim; T<sub>m</sub><sup>arrival</sup>
+  Schläpfer et al. (2021), through extensive data analysis, identified a key relationship governing the frequency and spatial distribution of human visits. Their research reveals that the number of visitors <i>N<sub>i</sub>(r,f)</i> at a location systematically decreases with travel distance <i>r</i> and travel frequency <i>f</i>. The visitation density is defined as:
+</p>
 
 <p align="center">
-	<img src="Infection_vesus_distance.png" width="700" height="350" />
-<p>
-	
-<h2>  POI-Metapopulation Model </h2>
-Chang et al. (2021) proposed a bipartite graph model that links Census Block Groups (CBGs), where people reside, to Points of Interest (POIs) they visit. In this model, the researchers overlaid the metapopulation to the bipartite to include disease transmission within the CBGs and also  disease transmission by visiting the POIs. 
+  <i>
+    &rho;<sub>i</sub>(r,f)
+    =
+    N<sub>i</sub>(r,f)/A(r)
+    =
+    &mu;<sub>i</sub>/(rf)<sup>&eta;</sup>
+  </i>
+</p>
 
-<h2>  Agent-based model </h2>
-Agent-based epidemic models (ABMs) are powerful computational tools used to simulate the spread of infectious diseases within a population by modeling the behaviors and interactions of individual entities, or "agents." Unlike traditional compartmental models that rely on population-level assumptions and averaged dynamics, ABMs capture heterogeneity in individual attributes, such as age, behavior, location, and health status, as well as complex contact structures and stochastic transmission events.
+<p>
+  The average number of trips made by individuals living in location <i>i</i> to destination <i>j</i> can be estimated as:
+</p>
 
 <p align="center">
-	<img src="agent_model_diagram.png" width="700" height="300" />
+  <i>
+    T<sub>ij</sub>
+    &approx;
+    &mu;<sub>j</sub>A<sub>i</sub>
+    /
+    r<sub>ij</sub><sup>2</sup>
+    ln(f<sub>max</sub>/f<sub>min</sub>)
+  </i>
+</p>
+
 <p>
-In real-world populations, individuals don’t mix randomly—people interact within structured social, spatial, and organizational patterns. Networks represent these patterns by modeling agents as nodes and their interactions or relationships (e.g., physical contact, shared spaces, communication) as edges. By embedding agents in a network, ABMs can more realistically simulate how diseases spread through actual contact pathways
-	
+  where <i>A<sub>i</sub></i> is the area of the origin location, <i>r<sub>ij</sub></i> is the distance between two locations, and <i>&mu;<sub>j</sub></i> is the destination-specific attractiveness.
+</p>
+
+<h3 id="comparison-collective">Comparison of Collective Mobility Models</h3>
+
+<p>
+  We use the Sørensen Similarity Index (SSI) to measure the similarity between estimated flows and true flows between two locations. The SSI is between 0 and 1, where a higher value indicates higher similarity and accuracy.
+</p>
+
 <p align="center">
-	<img src="agent_model_network.png" width="700" height="300" />
+  <i>
+    SSI =
+    2 &sum;<sub>ij</sub>
+    min(T<sub>ij</sub><sup>model</sup>, T<sub>ij</sub><sup>data</sup>)
+    /
+    (&sum;T<sub>ij</sub><sup>model</sup> + &sum;T<sub>ij</sub><sup>data</sup>)
+  </i>
+</p>
+
+<table>
+  <tr>
+    <th>Model</th>
+    <th>Key Assumption</th>
+    <th>SSI</th>
+  </tr>
+  <tr>
+    <td>Gravity Model</td>
+    <td>Population attraction and distance decay</td>
+    <td>0.56</td>
+  </tr>
+  <tr>
+    <td>Radiation Model</td>
+    <td>Population distribution and intervening opportunities</td>
+    <td>0.46</td>
+  </tr>
+  <tr>
+    <td>Visitation Model</td>
+    <td>Universal visitation scaling law</td>
+    <td>0.70</td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="comparison_figure.png" width="900" height="350" alt="Comparison of collective mobility models">
+</p>
+
+<h2 id="individual-mobility">1.2 Individual Mobility</h2>
+
 <p>
+  While collective mobility models estimate aggregated flows between regions, individual mobility models describe the behavioral mechanisms that generate human trajectories. These models capture exploration, preferential return, long-distance travel, and modular movement patterns.
+</p>
 
-<h2>  Metapopulation Model and Wastewater </h2>
+<h3 id="epr-model">EPR Model</h3>
 
-Zhong et al (2026) prposed the sptial baeysian reneal model, extendes from the bayesian renewal model with reliability-weighted wasatweater and mboility netowrk, can forecast infectiou sdieasese.
+<p>
+  The EPR (Exploration and Preferential Return) model (Song et al., 2010) is a classical individual mobility model that describes human mobility dynamics based on two fundamental behavioral tendencies. This model captures individual mobility scaling, including:
+</p>
 
-<p> References: </p>
-<p>[1] Barbosa, H., Barthelemy, M., Ghoshal, G., James, C. R., Lenormand, M., Louail, T., ... & Tomasini, M. (2018). Human mobility: Models and applications. Physics Reports, 734, 1-74.</p>
-<p>[2] Belik, V., Geisel, T., & Brockmann, D. (2011). Natural human mobility patterns and spatial spread of infectious diseases. Physical Review X, 1(1), 011001.</p>
-<p>[3] Simini, F., González, M. C., Maritan, A., & Barabási, A. L. (2012). A universal model for mobility and migration patterns. Nature, 484(7392), 96-100.</p>
-<p>[4] Schläpfer, M., Dong, L., O’Keeffe, K., Santi, P., Szell, M., Salat, H., ... & West, G. B. (2021). The universal visitation law of human mobility. Nature, 593(7860), 522-527.</p>
-<p>[5] Song, C., Koren, T., Wang, P., & Barabási, A. L. (2010). Modelling the scaling properties of human mobility. Nature physics, 6(10), 818-823.</p>
-<p> [6] Pappalardo, L., Simini, F., Rinzivillo, S., Pedreschi, D., Giannotti, F., & Barabási, A. L. (2015). Returners and explorers dichotomy in human mobility. Nature communications, 6(1), 8166. </p>
-<p> [7] Brockmann, D., & Helbing, D. (2013). The hidden geometry of complex, network-driven contagion phenomena. science, 342(6164), 1337-1342. </p>
-<p> [8] Chang, S., Pierson, E., Koh, P. W., Gerardin, J., Redbird, B., Grusky, D., & Leskovec, J. (2021). Mobility network models of COVID-19 explain inequities and inform reopening. Nature, 589(7840), 82-87.</p>
-<p> [9] Zhong, L., Diagne, M., Wang, W., & Gao, J. (2021). Country distancing increase reveals the effectiveness of travel restrictions in stopping COVID-19 transmission. Communications Physics, 4(1), 121. </p>
-<p> [10] Wang, Y., Zhong, L., Du, J., Gao, J., & Wang, Q. (2022). Identifying the shifting sources to predict the dynamics of COVID-19 in the US. Chaos: An Interdisciplinary Journal of Nonlinear Science, 32(3).</p>
-<p> [11] Zhong, L., Dong, L., Wang, Q.R., Song, C. and Gao, J., (2025). Universal expansion of human mobility across urban scales. Nature Cities, pp.1-5.
-<p> [12] Zhong, L., Dong, L., Wang, Q., Song, C., & Gao, J. (2026). Switching exploration modes in human mobility. Journal of the Royal Society Interface </p>
-<p> [13] Zhong, L., Bleichrodt, A., Pandey, A., Kunkel, D. and Rennert, L., 2026. A spatial EHR and wastewater-informed modeling framework for respiratory virus prediction under sparse and missing data conditions. medRxiv, pp.2026-05.  </p>
+<ul>
+  <li>the growth of unique locations, <i>S(t) ~ t<sup>&mu;</sup></i>;</li>
+  <li>Zipf's law of visitation frequency;</li>
+  <li>ultraslow diffusion.</li>
+</ul>
+
+<p>
+  <b>Exploration:</b> With probability <i>P=&rho;S<sup>-&gamma;</sup></i>, the individual explores a new location.
+</p>
+
+<p>
+  <b>Preferential Return:</b> With probability <i>1-P</i>, the individual returns to a previously visited location according to its past visitation frequency <i>f<sub>i</sub></i>.
+</p>
+
+<h3 id="d-epr-model">d-EPR Model</h3>
+
+<p>
+  Unlike the EPR model, where individuals randomly select a new location during exploration, the d-EPR model (Pappalardo et al., 2015) proposes that individuals visit new locations according to gravity-model probability <i>P<sub>ij</sub></i>. This mechanism generates longer-distance paths and stronger connectivity across regions.
+</p>
+
+<h3 id="pepr-model">PEPR Model</h3>
+
+<p>
+  The Preferential Exploration and Preferential Return (PEPR) model (Schläpfer et al., 2021) states that when individuals explore new locations, they tend to favor areas that are frequently visited. Specifically, exploration direction is biased toward regions with high visitation intensity, characterized by distribution <i>P(&theta;; R,v)</i>.
+</p>
+
+<h3 id="switch-model">Switch Model</h3>
+
+<p>
+  Human mobility exhibits distinct spatial and topological characteristics: it is modular, and within each module, hub locations facilitate revisitation. This configuration demonstrates high modularity but low clustering coefficients.
+</p>
+
+<p>
+  To reproduce these patterns, Zhong et al. (2025; 2026) proposed the Switch Model, which introduces switching mechanisms governing transitions both within and across modules. The model captures modular-like human trajectories and switching exploration modes across spatial scales.
+</p>
+
+<h3 id="comparison-individual">Comparison of Individual Mobility Models</h3>
+
+<ul>
+  <li><b>EPR Model:</b> local exploration and preferential return.</li>
+  <li><b>d-EPR Model:</b> gravity-driven long-distance exploration.</li>
+  <li><b>PEPR Model:</b> visitation-biased exploration.</li>
+  <li><b>Switch Model:</b> modular trajectories and switching exploration modes.</li>
+</ul>
+
+<p align="center">
+  <img src="comparison_individual.png" width="900" height="300" alt="Comparison of individual mobility models">
+</p>
+
+<hr>
+
+<h1 id="mobility-networks">2. Mobility Networks</h1>
+
+<p>
+  Human mobility models generate mobility networks connecting cities, counties, regions, and countries. In such networks, nodes represent geographic units and weighted directed edges represent mobility flows. These networks provide the spatial substrate through which infectious diseases spread.
+</p>
+
+<h2 id="network-topology">Network Topology</h2>
+
+<p>
+  Mobility networks are not random. They often exhibit heterogeneous degree distributions, spatial embedding, hub-and-spoke structures, community organization, and modularity. These topological properties strongly influence epidemic spreading patterns, outbreak arrival times, and intervention effectiveness.
+</p>
+
+
+<h2 id="effective-distance">Effective Distance</h2>
+
+<p>
+  Brockmann and Helbing (2013) introduced the concept of effective distance to reveal the hidden geometry of mobility-driven contagion phenomena. While geographic distance measures physical separation, effective distance measures epidemic proximity through mobility flows.
+</p>
+
+<p align="center">
+  <i>d<sub>mn</sub> = 1 - logP<sub>mn</sub></i>
+</p>
+
+<p>
+  where <i>P<sub>mn</sub></i> is the mobility probability from node <i>m</i> to node <i>n</i>. The effective distance between an outbreak source <i>k</i> and node <i>m</i> is the shortest-path distance in effective-distance space:
+</p>
+
+<p align="center">
+  <i>
+    D<sub>mk</sub>
+    =
+    &sum;<sub>(i,j)&in;&Gamma;</sub>
+    d<sub>ij</sub>
+  </i>
+</p>
+
+<p>
+  Effective distance can predict arrival times of epidemics more accurately than geographic distance:
+</p>
+
+<p align="center">
+  <i>D<sub>mk</sub> &sim; T<sub>m</sub><sup>arrival</sup></i>
+</p>
+
+<h2 id="effective-distance-multiple-outbreaks">Effective Distance with Multiple Outbreak Locations</h2>
+
+<p>
+  Real-world epidemics often involve multiple outbreak locations whose importance changes over time. Zhong et al. (2021) generalized effective-distance theory to account for multiple outbreak locations. Given an outbreak set <i>N<sub>I</sub></i>, the distance from multiple sources to node <i>m</i> is defined as:
+</p>
+
+<p align="center">
+  <i>
+    D<sub>m|N<sub>I</sub></sub>
+    =
+    log
+    (
+    1/
+    &sum;<sub>n<sub>i</sub>&in;N<sub>I</sub></sub>
+    e<sup>-D<sub>m|n<sub>i</sub></sub></sup>
+    )
+  </i>
+</p>
+
+<p>
+  This framework enables the identification of shifting epidemic sources and improves arrival-time prediction when outbreaks emerge from multiple locations simultaneously.
+</p>
+
+<p align="center">
+  <img src="Infection_vesus_distance.png" width="700" height="350" alt="Infection versus effective distance">
+</p>
+
+<hr>
+
+<h1 id="epidemic-dynamics">3. Epidemic Dynamics</h1>
+
+<p>
+  Mobility networks provide the substrate upon which infectious diseases spread. Epidemic dynamics models describe how local transmission and mobility-driven importation jointly shape disease propagation.
+</p>
+
+<h2 id="sir-metapopulation">SIR Metapopulation Model</h2>
+
+<p>
+  The Susceptible-Infectious-Recovered (SIR) metapopulation model is a mathematical framework used to study disease spread across multiple interconnected populations. Unlike the classic SIR model, which assumes a single well-mixed population, the metapopulation approach accounts for spatial heterogeneity by dividing the population into distinct subpopulations connected by mobility or migration dynamics.
+</p>
+
+<p>
+  Let there be <i>n</i> regions, each governed by standard SIR dynamics. Individuals exist in three states: susceptible <i>s<sub>n</sub></i>, infected <i>i<sub>n</sub></i>, and removed <i>r<sub>n</sub></i>. Disease transmission within each subpopulation follows local interactions, while inter-subpopulation spread is driven by the mobility flow matrix <i>P<sub>mn</sub></i>.
+</p>
+
+<p align="center">
+  <i>
+    s&#775;<sub>n</sub>
+    =
+    -&alpha;s<sub>n</sub>i<sub>n</sub>&sigma;(i<sub>n</sub>/&epsilon;)
+    +
+    &gamma;
+    &sum;<sub>m&ne;n</sub>
+    P<sub>mn</sub>(s<sub>m</sub>-s<sub>n</sub>)
+  </i>
+</p>
+
+<p align="center">
+  <i>
+    i&#775;<sub>n</sub>
+    =
+    &alpha;s<sub>n</sub>i<sub>n</sub>&sigma;(i<sub>n</sub>/&epsilon;)
+    -
+    &beta;i<sub>n</sub>
+    +
+    &gamma;
+    &sum;<sub>m&ne;n</sub>
+    P<sub>mn</sub>(i<sub>m</sub>-i<sub>n</sub>)
+  </i>
+</p>
+
+<p>
+  With a single initial outbreak location <i>k</i>, the initial conditions are:
+</p>
+
+<p align="center">
+  <i>
+    s<sub>k</sub>=s<sub>k</sub><sup>real</sup>,
+    i<sub>k</sub>=i<sub>k</sub><sup>real</sup>,
+    r<sub>k</sub>=r<sub>k</sub><sup>real</sup>
+  </i>
+</p>
+
+<h2 id="poi-metapopulation">POI Metapopulation Model</h2>
+
+<p>
+  Chang et al. (2021) proposed a bipartite graph model that links Census Block Groups (CBGs), where people reside, to Points of Interest (POIs) that people visit. In this model, disease transmission occurs both within residential communities and through visits to shared locations.
+</p>
+
+<p>
+  This framework captures how mobility to restaurants, workplaces, grocery stores, schools, and other POIs can shape infection risk. It also helps explain heterogeneous impacts of COVID-19 across socioeconomic groups and supports reopening-policy evaluation.
+</p>
+
+<h2 id="agent-based-models">Agent-based Models</h2>
+
+<p>
+  Agent-based epidemic models (ABMs) simulate the spread of infectious diseases by modeling the behaviors and interactions of individual agents. Unlike compartmental models that rely on population-level assumptions, ABMs capture heterogeneity in age, behavior, location, health status, and contact patterns.
+</p>
+
+<p align="center">
+  <img src="agent_model_diagram.png" width="700" height="300" alt="Agent-based model diagram">
+</p>
+
+<p>
+  In real-world populations, individuals do not mix randomly. People interact through structured social, spatial, and organizational patterns. Networks represent these interactions by modeling agents as nodes and relationships, physical contacts, shared spaces, or communication channels as edges. Embedding agents in networks allows ABMs to reproduce realistic contact pathways and intervention effects.
+</p>
+
+<p align="center">
+  <img src="agent_model_network.png" width="700" height="300" alt="Agent-based model network">
+</p>
+
+<h2 id="wastewater-surveillance-models">Wastewater Surveillance Models</h2>
+
+<p>
+  Wastewater-based epidemiology (WBE) has emerged as an effective population-level surveillance approach for monitoring infectious diseases. Because infected individuals shed viral particles regardless of whether they develop symptoms or seek clinical testing, wastewater measurements can provide an early signal of community-level infection dynamics.
+</p>
+
+<p>
+  Wastewater surveillance can be integrated with mobility networks and renewal models to estimate hidden infections, improve forecasts, and detect outbreaks when clinical case data are delayed, sparse, or incomplete.
+</p>
+
+<hr>
+
+<h1 id="epidemic-intelligence-control">4. Epidemic Intelligence and Control</h1>
+
+<p>
+  Epidemic intelligence integrates surveillance, modeling, forecasting, and intervention. In mobility-network-based disease systems, epidemic intelligence aims to answer three questions:
+</p>
+
+<ul>
+  <li><b>Where did the outbreak originate?</b></li>
+  <li><b>Where will it spread next?</b></li>
+  <li><b>How can interventions reduce transmission most efficiently?</b></li>
+</ul>
+
+<h2 id="source-identification">Source Identification</h2>
+
+<p>
+  Identifying outbreak sources is a fundamental problem in epidemic control. Given observed infection patterns across a network, the objective is to infer the most probable outbreak location.
+</p>
+
+<p>
+  Using effective-distance theory, the outbreak source can be estimated by minimizing the variance between effective distances and observed arrival times:
+</p>
+
+<p align="center">
+  <i>
+    k<sup>*</sup>
+    =
+    argmin<sub>k</sub>
+    Var(D<sub>mk</sub>-T<sub>m</sub>)
+  </i>
+</p>
+
+<p>
+  This framework can identify both single and multiple outbreak locations and track shifting epidemic sources over time.
+</p>
+
+<h2 id="travel-restrictions">Travel Restrictions</h2>
+
+<p>
+  Travel restrictions reduce infection transmission by decreasing mobility flows between regions. Let <i>P<sub>mn</sub></i> denote the mobility flow from region <i>m</i> to region <i>n</i>. An intervention modifies the flow matrix as:
+</p>
+
+<p align="center">
+  <i>
+    P'<sub>mn</sub>
+    =
+    w<sub>mn</sub>P<sub>mn</sub>
+  </i>
+</p>
+
+<p>
+  where <i>0 &le; w<sub>mn</sub> &le; 1</i> is the intervention strength.
+</p>
+
+<p>
+  Travel-restriction strategies include:
+</p>
+
+<ul>
+  <li>uniform reduction of all flows;</li>
+  <li>distance-based travel restrictions;</li>
+  <li>targeted removal of high-risk routes;</li>
+  <li>dynamic travel controls based on epidemic risk.</li>
+</ul>
+
+
+<h2 id="ehr-wastewater-forecasting">EHR and Wastewater-Informed Forecasting</h2>
+
+
+<p>
+  EHRs provide near-real-time information on healthcare utilization, diagnoses, symptoms, hospitalizations, and clinical burden. Wastewater surveillance provides population-level signals of infection activity, including asymptomatic and unreported infections. Together, these complementary signals improve robustness when one data stream is delayed, missing, or biased.
+</p>
+
+<p>
+  Zhong (2026) proposed a spatial EHR and wastewater-informed modeling framework for respiratory virus prediction under sparse and missing data conditions. The framework integrates EHR signals, wastewater measurements, and spatial dependence to forecast respiratory viruses.
+</p>
 
 
 
+<h2 id="multi-pathogen-intelligence">Multi-pathogen Epidemic Intelligence</h2>
+
+<p>
+  The integration of mobility networks, wastewater surveillance, EHRs, and spatial modeling enables multi-pathogen epidemic intelligence. Instead of modeling a single disease in isolation, this framework supports simultaneous monitoring and forecasting of multiple respiratory viruses.
+</p>
+
+<p>
+  Applications include:
+</p>
+
+<ul>
+  <li>COVID-19 forecasting;</li>
+  <li>influenza forecasting;</li>
+  <li>RSV forecasting;</li>
+  <li>healthcare burden prediction;</li>
+</ul>
 
 
+<h1 id="references">References</h1>
+
+<p>[1] Barbosa, H., Barthelemy, M., Ghoshal, G., James, C. R., Lenormand, M., Louail, T., ... &amp; Tomasini, M. (2018). Human mobility: Models and applications. <i>Physics Reports</i>, 734, 1-74.</p>
+
+<p>[2] Belik, V., Geisel, T., &amp; Brockmann, D. (2011). Natural human mobility patterns and spatial spread of infectious diseases. <i>Physical Review X</i>, 1(1), 011001.</p>
+
+<p>[3] Simini, F., González, M. C., Maritan, A., &amp; Barabási, A. L. (2012). A universal model for mobility and migration patterns. <i>Nature</i>, 484(7392), 96-100.</p>
+
+<p>[4] Schläpfer, M., Dong, L., O’Keeffe, K., Santi, P., Szell, M., Salat, H., ... &amp; West, G. B. (2021). The universal visitation law of human mobility. <i>Nature</i>, 593(7860), 522-527.</p>
+
+<p>[5] Song, C., Koren, T., Wang, P., &amp; Barabási, A. L. (2010). Modelling the scaling properties of human mobility. <i>Nature Physics</i>, 6(10), 818-823.</p>
+
+<p>[6] Pappalardo, L., Simini, F., Rinzivillo, S., Pedreschi, D., Giannotti, F., &amp; Barabási, A. L. (2015). Returners and explorers dichotomy in human mobility. <i>Nature Communications</i>, 6(1), 8166.</p>
+
+<p>[7] Brockmann, D., &amp; Helbing, D. (2013). The hidden geometry of complex, network-driven contagion phenomena. <i>Science</i>, 342(6164), 1337-1342.</p>
+
+<p>[8] Chang, S., Pierson, E., Koh, P. W., Gerardin, J., Redbird, B., Grusky, D., &amp; Leskovec, J. (2021). Mobility network models of COVID-19 explain inequities and inform reopening. <i>Nature</i>, 589(7840), 82-87.</p>
+
+<p>[9] Zhong, L., Diagne, M., Wang, W., &amp; Gao, J. (2021). Country distancing increase reveals the effectiveness of travel restrictions in stopping COVID-19 transmission. <i>Communications Physics</i>, 4(1), 121.</p>
+
+<p>[10] Wang, Y., Zhong, L., Du, J., Gao, J., &amp; Wang, Q. (2022). Identifying the shifting sources to predict the dynamics of COVID-19 in the US. <i>Chaos: An Interdisciplinary Journal of Nonlinear Science</i>, 32(3).</p>
+
+<p>[11] Zhong, L., Dong, L., Wang, Q. R., Song, C., &amp; Gao, J. (2025). Universal expansion of human mobility across urban scales. <i>Nature Cities</i>, pp. 1-5.</p>
+
+<p>[12] Zhong, L., Dong, L., Wang, Q., Song, C., &amp; Gao, J. (2026). Switching exploration modes in human mobility. <i>Journal of the Royal Society Interface</i>.</p>
+
+<p>[13] Zhong, L., Bleichrodt, A., Pandey, A., Kunkel, D., &amp; Rennert, L. (2026). A spatial EHR and wastewater-informed modeling framework for respiratory virus prediction under sparse and missing data conditions. <i>medRxiv</i>, pp. 2026-05.</p>
+
+<hr>
+
+<p align="center">
+  <a href="#top">Back to top</a>
+</p>
+
+</body>
+</html>
